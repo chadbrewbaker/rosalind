@@ -4,6 +4,8 @@ import sys
 def compute_hamming_distance(sequences):
     '''Computes the Hamming Distance of an array of two sequences
     of the same length.
+
+    BETTER ANSWER: Use zip() and count() instead...
     '''
 
     if len(sequences[0]) != len(sequences[1]):
