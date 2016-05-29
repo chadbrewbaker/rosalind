@@ -9,23 +9,7 @@ def compute_hamming_distance(sequences):
     if len(sequences[0]) != len(sequences[1]):
         raise ValueError('Sequences must be of the same length')
 
-    # Will generate a huge list of tuples for large sequences...
-    # return len(
-    #     [
-    #         (sequences[0][_], sequences[1][_])
-    #         for _
-    #         in range(len(sequences[0]))
-    #         if sequences[0][_] != sequences[1][_]
-    #     ]
-    # )
-
-    hamming_distance = 0
-
-    for _ in range(len(sequences[0])):
-        if sequences[0][_] != sequences[1][_]:
-            hamming_distance += 1
-
-    return hamming_distance
+    return sum(_ != __ for _, __ in zip(sequences[0], sequences[1]))
 
 
 if __name__ == '__main__':
